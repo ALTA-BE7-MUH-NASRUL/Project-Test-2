@@ -1,0 +1,21 @@
+mode: set
+Tugas/Project-Test-2/usecase/auth/auth.go:9.92,13.2 1 1
+Tugas/Project-Test-2/usecase/auth/auth.go:14.78,17.2 2 1
+Tugas/Project-Test-2/usecase/user/user.go:12.92,16.2 1 1
+Tugas/Project-Test-2/usecase/user/user.go:18.70,21.2 2 1
+Tugas/Project-Test-2/usecase/user/user.go:23.68,26.2 2 1
+Tugas/Project-Test-2/usecase/user/user.go:27.81,30.2 2 1
+Tugas/Project-Test-2/usecase/user/user.go:31.91,35.2 3 1
+Tugas/Project-Test-2/usecase/project/project.go:12.107,16.2 1 1
+Tugas/Project-Test-2/usecase/project/project.go:18.79,21.2 2 1
+Tugas/Project-Test-2/usecase/project/project.go:23.77,26.2 2 1
+Tugas/Project-Test-2/usecase/project/project.go:27.95,30.2 2 1
+Tugas/Project-Test-2/usecase/project/project.go:31.105,35.2 3 1
+Tugas/Project-Test-2/usecase/project/project.go:36.107,40.2 3 1
+Tugas/Project-Test-2/usecase/task/task.go:12.92,16.2 1 1
+Tugas/Project-Test-2/usecase/task/task.go:18.70,21.2 2 1
+Tugas/Project-Test-2/usecase/task/task.go:23.68,26.2 2 1
+Tugas/Project-Test-2/usecase/task/task.go:27.100,30.2 2 1
+Tugas/Project-Test-2/usecase/task/task.go:31.90,35.2 3 1
+Tugas/Project-Test-2/usecase/task/task.go:36.89,40.2 3 1
+Tugas/Project-Test-2/usecase/task/task.go:41.92,45.2 3 1
