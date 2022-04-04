@@ -3,7 +3,6 @@ package project
 import (
 	"Tugas/Project-Test-2/delivery/helper"
 	_middlewares "Tugas/Project-Test-2/delivery/middleware"
-	_entities "Tugas/Project-Test-2/entities"
 	_projectUseCase "Tugas/Project-Test-2/usecase/project"
 	"net/http"
 	"strconv"
@@ -71,9 +70,20 @@ func (th *ProjectHandler) DeleteProjectHandler() echo.HandlerFunc {
 
 func (th *ProjectHandler) CreateProjectHandler() echo.HandlerFunc {
 	return func(c echo.Context) error {
-		var Project _entities.Project
-		c.Bind(&Project)
-		Project, err := th.projectUseCase.CreateProject(Project)
+		type project struct {
+			UserId int    `json:"UserId"`
+			Title  string `json:"title"`
+		}
+		var projects project
+		c.Bind(&projects)
+		idToken, tokenerr := _middlewares.ReadTokenId(c)
+		if tokenerr != nil {
+			return c.JSON(http.StatusBadRequest, helper.ResponseFailed("Bad Request"))
+		}
+		if idToken != projects.UserId {
+			return c.JSON(http.StatusBadRequest, helper.ResponseFailed("Bad Request"))
+		}
+		Project, err := th.projectUseCase.CreateProject(projects.UserId, projects.Title)
 		if err != nil {
 			return c.JSON(http.StatusInternalServerError, helper.ResponseFailed("Failed create data"))
 		}

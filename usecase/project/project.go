@@ -24,8 +24,8 @@ func (tuc *ProjectUseCase) DeleteProject(id int) (_entities.Project, error) {
 	Project, err := tuc.projcetRepository.DeleteProject(id)
 	return Project, err
 }
-func (tuc *ProjectUseCase) CreateProject(user _entities.Project) (_entities.Project, error) {
-	Project, err := tuc.projcetRepository.CreateProject(user)
+func (tuc *ProjectUseCase) CreateProject(UserId int, Title string) (_entities.Project, error) {
+	Project, err := tuc.projcetRepository.CreateProject(UserId, Title)
 	return Project, err
 }
 func (tuc *ProjectUseCase) UpdatedProject(Project _entities.Project, id int) (_entities.Project, error) {
