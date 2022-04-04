@@ -47,5 +47,4 @@ func main() {
 	_routes.RegisterPath(e, userHandler, taskHandler, projectHandler)
 	_routes.RegisterAuthPath(e, authHandler)
 	log.Fatal(e.Start(fmt.Sprintf(":%v", config.Port)))
-
 }
