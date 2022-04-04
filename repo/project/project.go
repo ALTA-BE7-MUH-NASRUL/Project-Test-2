@@ -2,6 +2,7 @@ package project
 
 import (
 	_entities "Tugas/Project-Test-2/entities"
+	"fmt"
 
 	"gorm.io/gorm"
 )
@@ -16,9 +17,12 @@ func NewProjectRepository(db *gorm.DB) *ProjectRepository {
 	}
 }
 
-func (tr *ProjectRepository) CreateProject(_entities.Project) (_entities.Project, error) {
+func (tr *ProjectRepository) CreateProject(UserId int, Title string) (_entities.Project, error) {
 	var Project _entities.Project
+	Project.UserID = uint(UserId)
+	Project.Title = Title
 	Project.Status = "not completed"
+	fmt.Println(Project)
 	tx := tr.database.Save(&Project)
 	if tx.Error != nil {
 		return Project, tx.Error
